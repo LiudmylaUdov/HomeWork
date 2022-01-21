@@ -1,0 +1,106 @@
+
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+Создать внешний репозиторий под названием HW-branch
+На терминале
+
+command: cd HW2
+command: git clon https://github.com/LiudmylaUdov/HW-branch.git
+command: cd HW-braanch
+
+command: git branch Postman
+command: git branch Jmeter
+command: git branch CheckLists
+command: git branch BagReports
+command: git branch SQL
+command: git branch Charles
+command: git branch Mobile_testing
+
+
+2. Запушить все ветки на внешний репозиторий
+
+
+command: git push -u origin Postman Jmeter CheckLists BagReports SQL Charles Mobile_testing
+Или
+command: git push -all origin
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+
+command: git checkout BagReports
+command: cat > bag_report.txt
+
+ID: #123,
+  Name: Card - Unable to add new item to my cart,
+  Reporter: Liudmyla 
+
+  Bug owerview:
+  Summary: When my file contains one item.
+
+Environment:
+
+  Platform: Macintoch,
+  Operating System: "OS X 10.12.0,
+  Browser: "Chrome53
+
+Bug details:
+
+  Expected result: The cart should contain 2 items,
+  Actual result: The cart contains only 1 item
+
+Bug tracking:
+
+  Severity: Major,
+  Priority: High
+Control + C
+
+4. Запушить структуру багрепорта на внешний репозиторий
+
+command: git add bag_report.txt
+command: git commit -m "add bag_report.txt file"
+command: git push
+
+5. Вмержить ветку Bag Reports в Main
+
+command: git checkout main
+command: git merge BagReports
+
+6. Запушить main на внешний репозиторий.
+
+command: git push -u origin main
+
+7. В ветке CheckLists набросать структуру чек листа.
+command: git checkout CheckList
+command: cat > checklist.txt
+
+Чек-лист - это набор идей (тест-кейсов). Это документ содержащий список того, что мы будем тестировать и следовательно результат и статус тестирования.
+
+Control+C
+
+8. Запушить структуру на внешний репозиторий
+
+command: git add checklist.txt
+command: git commit -m "add checklist.txt file"
+command: git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Зайти в репозиторий HW-branch
+Зайти на ветку CheckList
+Нажать кнопку Compare & pull request
+Выбрать base:main, compare:Checklists
+Написать комментарий: pull request branch Checklists to branch main
+Нажать кнопку Create pull request
+Нажать кнопку Merge pull request
+Нажать кнопку Сonfirm merge
+
+
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+command: git checkout main
+command: git pull
